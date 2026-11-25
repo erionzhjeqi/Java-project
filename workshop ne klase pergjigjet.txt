@@ -1,0 +1,50 @@
+Workshop 1 - Pergjigjet
+Emri dhe mbiemri: Erion Zhjeqi
+Varianti: SK C
+
+
+1. switch-i që jep vlerë
+a) Në cilin rresht fillon?
+Në rreshtin 13 (`double rreziku = switch (porti) {`).
+
+
+b) Çka ruan në variabël për inputin e parë të shembullit tuaj?
+Për inputin `8080` (me `tcp` dhe `po`), ruan vlerën `6.0` te variabla `rreziku`.
+
+
+c) Çka ndodh nëse e fshini rreshtin me default? Pse?
+Programi nuk kompilohet (jep gabim kompilimi), sepse `switch` përdoret si shprehje që kthen vlerë për `rreziku` dhe `porti` është tip `int`, kështu që Java kërkon patjetër degën `default` për çdo numër tjetër që nuk është përmendur te `case`.
+
+
+2. Një kusht me && ose ||
+a) Në cilin rresht është?
+P.sh. në rreshtin 27 (`if (porti == 80 || porti == 443)`). (Ka edhe në rreshtat 5, 29 dhe 36).
+
+
+b) Një input ku kushti del true:
+Porti `80` (ose `443`) dhe protokolli `TCP`.
+
+
+c) Një input ku kushti del false:
+Porti `22` (ose `8080` apo `53`) dhe protokolli `TCP`.
+
+
+3. Ndryshimi juaj
+a) Cilat rreshta i shtuat ose i ndryshuat?
+Shtova `case 123 -> 3.0;` (rreshti 17) dhe `case 8080 -> 6.0;` (rreshti 20) te `switch`-i, ndryshova rreshtin 29 në `else if (porti == 22 || porti == 8080)` dhe rreshtin 36 në `if (porti == 53 || porti == 123)`.
+
+
+b) Pse pikërisht aty?
+Te `switch`-i vendosen vlerat e rrezikut për portet `8080` dhe `123`; te rreshti 29 trajtohet rasti kur TCP `8080` vjen nga rrjeti i brendshëm (`po`); te rreshti 36 lejohet UDP `123`.
+
+
+c) Një input që e provon ndryshimin, dhe output-i që del:
+Input:
+Porti: 8080
+Protokolli (TCP/UDP): tcp
+Nga rrjeti i brendshëm? (po/jo) po
+
+
+Output:
+TCP 8080: LEJOHET
+Rreziku i portit: 6.00 nga 10
